@@ -55,11 +55,11 @@ test1inch.describe("1inch swap and back", () => {
     await mmConnectConfirmPage.connectConfirmClick()
   })
 
-  test1inch("configure tokens",  async ({context, token1, token2, amount}) => {
+  test1inch("configure tokens",  async ({context, network, token1, token2, amount}) => {
     var inchSwapPage = new OneInchSwap(context.pages()[2])
   
     await inchSwapPage.openToken1Selector()
-    await inchSwapPage.selectNetwork('Arbitrum')
+    await inchSwapPage.selectNetwork(network)
     await inchSwapPage.selectToken(token1)
 
     await inchSwapPage.openToken2Selector()
@@ -68,7 +68,7 @@ test1inch.describe("1inch swap and back", () => {
     await inchSwapPage.inputAmount(amount)
   })
 
-  test1inch("do swap", async ({context, amount}) => {
+  test1inch("do swap", async ({context}) => {
     var inchSwapPage = new OneInchSwap(context.pages()[2])
     
     await inchSwapPage.verifyRequiredElementsPresent()

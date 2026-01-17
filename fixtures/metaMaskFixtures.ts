@@ -5,6 +5,7 @@ type TestFixtures = {
   context: BrowserContext;
   seedPhrase: string
   password: string
+  network: string
   token1: string
   token2: string
   amount: string
@@ -45,6 +46,9 @@ export function createMetamaskFixture() {
     }, 
     password: async ({}, use) => {
       use(process.env.METAMASK_PASSWORD)
+    }, 
+    network: async ({}, use) => {
+      use(process.env.NETWORK)
     }, 
     token1: async ({}, use) => {
       use(process.env.TOKEN_1)
