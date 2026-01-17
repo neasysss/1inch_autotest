@@ -5,7 +5,7 @@
 - Установить **Node.js**: https://nodejs.org/
 - Установить **Yarn**: https://yarnpkg.com/.
 - Скопировать `.env.example` и переименовать его в `.env`, актуализировав значения внутри
-- Установить зависимости (`yarn install`)
+- Установить зависимости (`yarn install` и `yarn playwright install`)
 
 ### Запуск
 
